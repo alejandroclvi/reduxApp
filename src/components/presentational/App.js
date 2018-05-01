@@ -11,9 +11,9 @@ import {
   Text,
   View
 } from 'react-native'
-import VisibleTodoList from './VisibleTodoList'
-import AddTodoForm from '../presentational/AddTodoForm';
-import Footer from '../presentational/Footer'
+import VisibleTodoList from '../container/VisibleTodoList'
+import AddTodoForm from './AddTodoForm';
+import Footer from './Footer'
 
 const FILTERS = [{name:'Active', constant:'SHOW_ACTIVE'},{name:'Completed', constant:'SHOW_COMPLETED'}, {name:'All', constant:'SHOW_ALL'}]
 

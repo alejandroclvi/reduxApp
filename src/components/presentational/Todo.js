@@ -15,7 +15,7 @@ import {
 const Todo = ({ todo , onTap, completed, id  }) => (
     <TouchableOpacity  onPress={() => onTap(id)}>
         <Text>
-         • <Text  style={{color:(completed)?'green':'red'}}>{ todo }</Text>
+         • <Text  style={{fontSize:18, color:(completed)?'green':'red'}}>{ todo }</Text>
         </Text>
     </TouchableOpacity>
 )
