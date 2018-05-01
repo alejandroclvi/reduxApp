@@ -13,6 +13,8 @@ import {
   TextInput,
   KeyboardAvoidingView
 } from 'react-native'
+import {  connect } from 'react-redux'
+import { addTodo, setInput  } from '../../redux/actions'
 
 const AddTodoButton = ({ addTodo, input }) => 
     <TouchableOpacity  style={styles.addTodoButtonContainer} onPress={() => addTodo(input)}>
@@ -60,6 +62,18 @@ const styles = StyleSheet.create({
     avoidingKeyboardView: {
         paddingBottom: 50,
     }
-  })
+})
 
-export default AddTodoForm
+const mapStateToProps = state => ({
+    input: state.input
+})
+  
+const mapDispatchToProps = dispatch => ({
+    addTodo: text => dispatch(addTodo(text)),
+    setInput: input => dispatch(setInput(input)),
+})
+
+export default connect(
+mapStateToProps, 
+mapDispatchToProps
+)(AddTodoForm)

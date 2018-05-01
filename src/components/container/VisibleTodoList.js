@@ -3,7 +3,6 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
 import { connect } from 'react-redux'
 import { setVisibilityFilter, toggleTodo } from '../../redux/actions'
 import TodoList from '../presentational/TodoList'
