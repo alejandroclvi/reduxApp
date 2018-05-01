@@ -15,11 +15,15 @@ import {  connect, Provider } from 'react-redux'
 import { addTodo, toggleTodo, setVisibilityFilter, setInput  } from '../../redux/actions'
 import TodoList from '../presentational/TodoList'
 import AddTodoForm from './AddTodoForm';
+import Footer from '../presentational/Footer'
+
+const FILTERS = [{name:'Active', constant:'SHOW_ACTIVE'},{name:'Completed', constant:'SHOW_COMPLETED'}, {name:'All', constant:'SHOW_ALL'}]
 
 const App = ({todos, input, setInput, toggleTodo, addTodo }) => (
   <View style={styles.container}>
       <TodoList todos={todos} onTodoTap={toggleTodo} />
       <AddTodoForm input={input} setInput={setInput} addTodo={addTodo} />
+      <Footer filters={FILTERS} />
   </View>
 )
 

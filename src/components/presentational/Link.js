@@ -14,6 +14,7 @@ const Link = ({ active , onTap, children }) =>
         onPress={onTap}
         disabled={active}
         style={{ marginLeft: 4}}
+        title={children}
     >
         { children }
     </Button>

@@ -8,14 +8,13 @@ import { connect } from 'react-redux'
 import { setVisibilityFilter } from '../../redux/actions'
 import Link from '../presentational/Link'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => ({
     active: state.visibilityFilter === ownProps.filter
-}
+})
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    onTap:() => dispatch(setVisibilityFilter(ownProps.visibilityFilter))
-}
-
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    onTap: () => dispatch(setVisibilityFilter(ownProps.filter))
+})
 
 export default connect(
     mapStateToProps,
