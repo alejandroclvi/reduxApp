@@ -16,29 +16,13 @@ import { addTodo, toggleTodo, setVisibilityFilter, setInput  } from '../../redux
 import TodoList from '../presentational/TodoList'
 import AddTodoForm from './AddTodoForm';
 
-class App extends Component {
-  componentDidMount() {
-    const { addTodo } = this.props 
-    addTodo('First todo')
-    addTodo('Second todo')
-    addTodo('Third todo')
-    addTodo('Fourth todo')
-    addTodo('Fifth todo')
-  }
-  componentDidUpdate() {
-    console.log(this.props)
-  }
+const App = ({todos, input, setInput, toggleTodo, addTodo }) => (
+  <View style={styles.container}>
+      <TodoList todos={todos} onTodoTap={toggleTodo} />
+      <AddTodoForm input={input} setInput={setInput} addTodo={addTodo} />
+  </View>
+)
 
-  render() {
-    const { todos, input, setInput, toggleTodo, addTodo } = this.props
-    return (
-      <View style={styles.container}>
-          <TodoList todos={todos} onTodoTap={toggleTodo} />
-          <AddTodoForm input={input} setInput={setInput} addTodo={addTodo} />
-      </View>
-    )
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
